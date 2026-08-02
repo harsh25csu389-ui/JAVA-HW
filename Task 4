@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class simple_interest{
+    public static void main(String[] args){
+        
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Enter the principal amount: ");
+        double A=input.nextInt();
+        
+        System.out.print("Enter the rate: ");
+        double B=input.nextInt();
+
+        System.out.print("Enter the TIme period: ");
+        double C=input.nextInt();
+
+        double D=(A*B*C)/100;
+        System.out.println("Simple interest: "+ D);
+        System.out.println("Final amount: "+ (A+D));
+        input.close();
+    }
+}
