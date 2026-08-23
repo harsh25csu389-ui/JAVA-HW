@@ -1,45 +1,61 @@
-public class arraystatistics {
+public class ArrayStatistics {
 
-    public void read(int[] arr) {
+    public static int sum(int[] arr) {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            System.out.print("(" + arr[i] + ")");
-            System.out.println(" ");
             sum = sum + arr[i];
         }
-        System.out.println("sum" + sum);
+        return sum;
     }
 
-    public void MinMax(int[] arr) {
-        int Max = arr[0];
+    public static double average(int[] arr) {
+        if (arr.length == 0) {
+            return 0;
+        }
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
+        }
+        return (double) sum / arr.length;
+    }
+
+    public static int minimum(int[] arr) {
+        if (arr.length == 0) {
+            return 0;
+        }
         int Min = arr[0];
         for (int i = 0; i < arr.length; i++) {
-            int c = arr[i];
-            if (c >= Max) {
-                Max = c;
-            }
-            if (c <= Min) {
-                Min = c;
+            if (arr[i] < Min) {
+                Min = arr[i];
             }
         }
-        System.err.println("max:" + Max + "min:" + Min);
+        return Min;
     }
 
-    public void EvenOdd(int[] arr) {
+    public static int maximum(int[] arr) {
+        if (arr.length == 0) {
+            return 0;
+        }
+        int Max = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > Max) {
+                Max = arr[i];
+            }
+        }
+        return Max;
+    }
+
+    public static int countEven(int[] arr) {
         int Even = 0;
-        int Odd = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] % 2 == 0) {
                 Even++;
-            } else {
-                Odd++;
             }
         }
-        System.out.println("Even: " + Even);
-        System.out.println("Odd: " + Odd);
+        return Even;
     }
 
-    public void CAT(int[] arr) {
+    public static void printSignCounts(int[] arr) {
         int P = 0;
         int N = 0;
         int Z = 0;
